@@ -35,7 +35,7 @@ object EventCounterJob {
 
 
     // 1. 从socket中接收文本数据
-    val streamText: DataStream[String] = env.socketTextStream(params.get("socket-host","0.0.0.0"), 9000)
+    val streamText: DataStream[String] = env.socketTextStream(params.get("socket-host","10.7.20.42"), 9000)
       .uid("SocketSource")
 
     // 2. 将文本内容按照空格分割转换为事件样例类

@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: taskmanager
-        image: flink-job:1.10.1-example
+        image: www.harbor.mobi/kuboard/flink-job:1.10.1-example
+        imagePullPolicy: Always
         command: ["/bin/bash", "-c", "$FLINK_HOME/bin/taskmanager.sh start;
         sleep 3;
         tail -f $FLINK_HOME/log/*.log"]

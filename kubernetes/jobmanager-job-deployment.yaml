@@ -19,8 +19,9 @@ spec:
       # restartPolicy: OnFailure
       containers:
         - name: jobmanager
-          image: flink-job:1.10.1-example
-          command: ["/bin/bash", "-c", "$FLINK_HOME/bin/standalone-job.sh start --job-classname flink.k8s.cluster.examples.EventCounterJob --socket-host 20.5.1.31;
+          image: www.harbor.mobi/kuboard/flink-job:1.10.1-example
+          imagePullPolicy: Always
+          command: ["/bin/bash", "-c", "$FLINK_HOME/bin/standalone-job.sh start --job-classname flink.k8s.cluster.examples.EventCounterJob --socket-host 10.7.20.42;
           sleep 3;
           tail -f $FLINK_HOME/log/*.log"]
           ports:

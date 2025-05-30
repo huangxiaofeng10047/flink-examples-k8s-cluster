@@ -19,7 +19,7 @@ spec:
       # restartPolicy: OnFailure
       containers:
         - name: zookeeper
-          image: zookeeper:3.6
+          image: www.harbor.mobi/kuboard/zookeeper:3.6
           ports:
             - containerPort: 2181
               name: port
